@@ -1,0 +1,32 @@
+table Language
+	lineageTag: b6059c35-8c3d-48c5-8a0e-dbc844daa45b
+
+	column LanguageID
+		dataType: int64
+		formatString: 0
+		lineageTag: ff7a648b-4366-47df-9fbe-679fa3bd7a37
+		summarizeBy: none
+		sourceColumn: LanguageID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Language
+		dataType: string
+		lineageTag: 5ce9590e-8a21-4673-b20f-f537a89d74f7
+		summarizeBy: none
+		sourceColumn: Language
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Language = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Language = Movies{[Schema="dbo",Item="Language"]}[Data]
+				in
+				    dbo_Language
+
+	annotation PBI_ResultType = Table
+

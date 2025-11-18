@@ -1,0 +1,148 @@
+table Film
+	lineageTag: eb76f4e1-d683-4d9e-b7ec-b9d9ad72531a
+
+	column FilmID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c677865-8457-47cf-a0da-32480836eef4
+		summarizeBy: none
+		sourceColumn: FilmID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 2be88d72-a6ec-482e-abb8-d2e93aca4dc8
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleaseDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7a6c4e3a-d734-4b1a-ad71-5b57c2075278
+		summarizeBy: none
+		sourceColumn: ReleaseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DirectorID
+		dataType: int64
+		formatString: 0
+		lineageTag: 367db843-780c-4383-a925-d4e8548ad7ad
+		summarizeBy: none
+		sourceColumn: DirectorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StudioID
+		dataType: int64
+		formatString: 0
+		lineageTag: 570c18fc-58d9-4fc8-875f-d27159348c10
+		summarizeBy: none
+		sourceColumn: StudioID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Review
+		dataType: string
+		lineageTag: 9f5670f0-1870-499c-bf88-dc8d9b30b57d
+		summarizeBy: none
+		sourceColumn: Review
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a882f72-2f83-476d-bb83-1d13f353c36b
+		summarizeBy: none
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LanguageID
+		dataType: int64
+		formatString: 0
+		lineageTag: ce5d16f8-e9ea-4144-a884-1b73077243a5
+		summarizeBy: none
+		sourceColumn: LanguageID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GenreID
+		dataType: int64
+		formatString: 0
+		lineageTag: b1a515d9-9476-42d2-8a44-b3675b74dd6a
+		summarizeBy: none
+		sourceColumn: GenreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RunTimeMinutes
+		dataType: int64
+		formatString: 0
+		lineageTag: b86ac60f-7c39-49c2-9b3e-c4bed9421099
+		summarizeBy: sum
+		sourceColumn: RunTimeMinutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column CertificateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 67dbefbc-fb3a-446a-ae65-ce24b6d27ae0
+		summarizeBy: none
+		sourceColumn: CertificateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetDollars
+		dataType: int64
+		formatString: 0
+		lineageTag: b2399bfa-8601-49c2-8e56-d85fbdaf22e6
+		summarizeBy: sum
+		sourceColumn: BudgetDollars
+
+		annotation SummarizationSetBy = Automatic
+
+	column BoxOfficeDollars
+		dataType: int64
+		formatString: 0
+		lineageTag: 08287976-d84a-4f01-b093-38abf536292d
+		summarizeBy: sum
+		sourceColumn: BoxOfficeDollars
+
+		annotation SummarizationSetBy = Automatic
+
+	column OscarNominations
+		dataType: int64
+		formatString: 0
+		lineageTag: c24a7e78-6370-4bde-b8cb-3c4ba499e7b6
+		summarizeBy: sum
+		sourceColumn: OscarNominations
+
+		annotation SummarizationSetBy = Automatic
+
+	column OscarWins
+		dataType: int64
+		formatString: 0
+		lineageTag: 6376109d-24d9-4d8b-9b3e-e056d2d2fa4a
+		summarizeBy: sum
+		sourceColumn: OscarWins
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Film = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Film = Movies{[Schema="dbo",Item="Film"]}[Data]
+				in
+				    dbo_Film
+
+	annotation PBI_ResultType = Table
+

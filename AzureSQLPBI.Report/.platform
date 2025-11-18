@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "AzureSQLPBI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "937e39f9-2257-4d8b-a49f-a75906ee5a14"
+  }
+}

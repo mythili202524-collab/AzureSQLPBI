@@ -1,0 +1,74 @@
+table Actor
+	lineageTag: 389f2875-c961-439b-9cd4-e12885832e1f
+
+	column ActorID
+		dataType: int64
+		formatString: 0
+		lineageTag: f7c3e648-f670-4efe-ab6d-fce1c6a89e56
+		summarizeBy: none
+		sourceColumn: ActorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: d5266c08-7ca2-49e5-a069-ebdcdf032886
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FamilyName
+		dataType: string
+		lineageTag: 8206f2c9-b01b-49bf-bfa9-778bc6958e6a
+		summarizeBy: none
+		sourceColumn: FamilyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: 849b57cd-a68c-40e0-ae73-6690295f0512
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DoB
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5c302456-cddb-471b-962f-b6790f1a5679
+		summarizeBy: none
+		sourceColumn: DoB
+
+		annotation SummarizationSetBy = Automatic
+
+	column DoD
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b3a004ec-b32b-4ed3-a3bd-79d421aeacb0
+		summarizeBy: none
+		sourceColumn: DoD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 01208410-4bbf-42b9-aa88-3a0132060600
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Actor = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Actor = Movies{[Schema="dbo",Item="Actor"]}[Data]
+				in
+				    dbo_Actor
+
+	annotation PBI_ResultType = Table
+

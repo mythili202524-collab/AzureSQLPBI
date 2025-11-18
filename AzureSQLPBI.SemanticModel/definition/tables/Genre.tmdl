@@ -1,0 +1,32 @@
+table Genre
+	lineageTag: 3d301730-be1f-4e12-9f8c-b3453d70ca7e
+
+	column GenreID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bc7dd3e-5b8d-49fe-a650-67cd8b8d25b4
+		summarizeBy: none
+		sourceColumn: GenreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genre
+		dataType: string
+		lineageTag: f6cfb2e3-9739-480c-beb9-2bbef4bace8b
+		summarizeBy: none
+		sourceColumn: Genre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Genre = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Genre = Movies{[Schema="dbo",Item="Genre"]}[Data]
+				in
+				    dbo_Genre
+
+	annotation PBI_ResultType = Table
+

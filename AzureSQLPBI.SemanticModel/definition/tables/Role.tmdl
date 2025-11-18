@@ -1,0 +1,50 @@
+table Role
+	lineageTag: d7bd3801-1141-4d3e-866b-b57ee6a3ce08
+
+	column RoleID
+		dataType: int64
+		formatString: 0
+		lineageTag: 253e9ce8-aa10-444f-bad5-4babd92ab08a
+		summarizeBy: count
+		sourceColumn: RoleID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: 773ff709-8ce1-4320-bd3b-9b6ad83e7949
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column FilmID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3445c123-ab8c-4b60-b514-4c8ffcc2c844
+		summarizeBy: none
+		sourceColumn: FilmID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActorID
+		dataType: int64
+		formatString: 0
+		lineageTag: 97f46ca8-7516-4bc4-be93-c5dfc06e45bb
+		summarizeBy: none
+		sourceColumn: ActorID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Role = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Role = Movies{[Schema="dbo",Item="Role"]}[Data]
+				in
+				    dbo_Role
+
+	annotation PBI_ResultType = Table
+

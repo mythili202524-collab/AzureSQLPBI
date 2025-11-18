@@ -1,0 +1,151 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 88,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 921.98539327854382,
+            "y": 151.0218353706133
+          },
+          "nodeIndex": "Actor",
+          "nodeLineageTag": "389f2875-c961-439b-9cd4-e12885832e1f",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 131.45691647254591
+          },
+          "nodeIndex": "Certificate",
+          "nodeLineageTag": "f7d1c205-9765-437b-b9bd-2de114002349",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 194.1015221148532,
+            "y": -50
+          },
+          "nodeIndex": "Country",
+          "nodeLineageTag": "a8140245-73ab-44a3-9458-3d707391d15a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 292.7228738447601,
+            "y": 602.53559447486941
+          },
+          "nodeIndex": "Director",
+          "nodeLineageTag": "8e32a802-9ec4-4adc-a0a7-4576c90ff23c",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 349.55740672661591,
+            "y": 138.24736211549083
+          },
+          "nodeIndex": "Film",
+          "nodeLineageTag": "eb76f4e1-d683-4d9e-b7ec-b9d9ad72531a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 581.8634992824658,
+            "y": 493.74878418272976
+          },
+          "nodeIndex": "Genre",
+          "nodeLineageTag": "3d301730-be1f-4e12-9f8c-b3453d70ca7e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 484.03229959369617,
+            "y": -45.302668085505275
+          },
+          "nodeIndex": "Language",
+          "nodeLineageTag": "b6059c35-8c3d-48c5-8a0e-dbc844daa45b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 634.89743428006591,
+            "y": 226.7589176911124
+          },
+          "nodeIndex": "Role",
+          "nodeLineageTag": "d7bd3801-1141-4d3e-866b-b57ee6a3ce08",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 59.625411962441945,
+            "y": 400.35004605069764
+          },
+          "nodeIndex": "Studio",
+          "nodeLineageTag": "5fb487f1-2768-40d0-8fff-f5758bee7761",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1155.9853932785438,
+            "y": 350.26779723743471
+          },
+          "nodeIndex": "RepMeasures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

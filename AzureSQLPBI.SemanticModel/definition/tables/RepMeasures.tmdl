@@ -1,0 +1,24 @@
+table RepMeasures
+	lineageTag: 56101e2d-784a-4a5e-997a-dc2ac64dd489
+
+	measure Filmcount = COUNT(Film[FilmID])
+		formatString: 0
+		lineageTag: 268d0d9f-2b25-4f5c-a379-6ca9c16f6f34
+
+	column Column
+		formatString: 0
+		lineageTag: 7a256114-6b85-4f74-9336-ae83b6f9c68d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RepMeasures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 83b07c1390504155bf223dab30daf2df
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

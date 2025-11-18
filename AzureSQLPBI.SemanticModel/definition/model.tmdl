@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Actor","Certificate","Country","Director","Film","Genre","Language","Role","Studio"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Actor
+ref table Certificate
+ref table Country
+ref table Director
+ref table Film
+ref table Genre
+ref table Language
+ref table Role
+ref table Studio
+ref table RepMeasures
+
+ref cultureInfo en-US
+

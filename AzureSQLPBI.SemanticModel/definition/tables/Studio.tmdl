@@ -1,0 +1,32 @@
+table Studio
+	lineageTag: 5fb487f1-2768-40d0-8fff-f5758bee7761
+
+	column StudioID
+		dataType: int64
+		formatString: 0
+		lineageTag: 92891f3d-ee09-4181-9f7d-331329dcbeca
+		summarizeBy: none
+		sourceColumn: StudioID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Studio
+		dataType: string
+		lineageTag: ad1d0e2f-0ff2-457a-bb49-564e736e808b
+		summarizeBy: none
+		sourceColumn: Studio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Studio = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("mythsql.database.windows.net"),
+				    Movies = Source{[Name="Movies"]}[Data],
+				    dbo_Studio = Movies{[Schema="dbo",Item="Studio"]}[Data]
+				in
+				    dbo_Studio
+
+	annotation PBI_ResultType = Table
+

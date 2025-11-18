@@ -1,0 +1,48 @@
+relationship 949c0f7c-7a35-436d-9f81-8686c1e12f59
+	fromColumn: Film.CertificateID
+	toColumn: Certificate.CertificateID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0c06537d-9122-4b35-bd50-708225ea26e7
+	fromColumn: Film.CountryID
+	toColumn: Country.CountryID
+
+	annotation PBI_IsFromSource = FS
+
+relationship eed2c7e5-9353-4768-8f6c-d3e129c1ddfe
+	fromColumn: Film.DirectorID
+	toColumn: Director.DirectorID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 7e017b76-8ddb-4504-b8f1-f406b0f359ac
+	fromColumn: Film.GenreID
+	toColumn: Genre.GenreID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 992bbf1d-66c8-4650-9d13-61a589b6338d
+	fromColumn: Film.LanguageID
+	toColumn: Language.LanguageID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 37a6c8f5-ace9-4615-abae-2c0736a37557
+	fromColumn: Film.StudioID
+	toColumn: Studio.StudioID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4bc355ea-bb9d-4149-b463-dfaca0d6638e
+	fromColumn: Role.ActorID
+	toColumn: Actor.ActorID
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0f024fd7-bab5-4ef1-94a9-5bb611fa24c7
+	fromColumn: Role.FilmID
+	toColumn: Film.FilmID
+
+	annotation PBI_IsFromSource = FS
+

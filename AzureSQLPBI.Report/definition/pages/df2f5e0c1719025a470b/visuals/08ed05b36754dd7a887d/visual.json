@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "08ed05b36754dd7a887d",
+  "position": {
+    "x": 43.636363636363633,
+    "y": 297.27272727272725,
+    "z": 4,
+    "height": 366.36363636363632,
+    "width": 249.99999999999997,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Language"
+                    }
+                  },
+                  "Property": "Language"
+                }
+              },
+              "queryRef": "Language.Language",
+              "nativeQueryRef": "Language",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d2a3aaed7ad41690856b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Language"
+              }
+            },
+            "Property": "Language"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
