@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "f606b824a70d284b26ec",
+  "name": "f51f21234043ecd79c68",
   "position": {
     "x": 43.848484848484844,
-    "y": 72.72727272727272,
-    "z": 1,
+    "y": 185,
+    "z": 5002,
     "height": 117.27272727272727,
     "width": 250,
-    "tabOrder": 1
+    "tabOrder": 5002
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Film"
                     }
                   },
-                  "Property": "BudgetDollars"
+                  "Property": "BoxOfficeDollars"
                 }
               },
-              "queryRef": "Film.BudgetDollars",
-              "nativeQueryRef": "BudgetDollars",
+              "queryRef": "Film.BoxOfficeDollars",
+              "nativeQueryRef": "BoxOfficeDollars",
               "active": true,
               "format": "\\$#,0;(\\$#,0);\\$#,0"
             }
@@ -42,14 +42,14 @@
             "numericStart": {
               "expr": {
                 "Literal": {
-                  "Value": "62303096D"
+                  "Value": "447495250D"
                 }
               }
             },
             "numericEnd": {
               "expr": {
                 "Literal": {
-                  "Value": "283533529D"
+                  "Value": "1872965161D"
                 }
               }
             },
@@ -90,12 +90,12 @@
                                     "Source": "f"
                                   }
                                 },
-                                "Property": "BudgetDollars"
+                                "Property": "BoxOfficeDollars"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "62303096D"
+                                "Value": "447495250D"
                               }
                             }
                           }
@@ -110,12 +110,12 @@
                                     "Source": "f"
                                   }
                                 },
-                                "Property": "BudgetDollars"
+                                "Property": "BoxOfficeDollars"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "283533529D"
+                                "Value": "1872965161D"
                               }
                             }
                           }
@@ -132,13 +132,6 @@
       "header": [
         {
           "properties": {
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
-                }
-              }
-            },
             "bold": {
               "expr": {
                 "Literal": {
@@ -151,28 +144,10 @@
       ]
     },
     "syncGroup": {
-      "groupName": "BudgetDollars",
+      "groupName": "BoxOfficeDollars",
       "fieldChanges": true,
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "594b59667e6347885756",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Film"
-              }
-            },
-            "Property": "BudgetDollars"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

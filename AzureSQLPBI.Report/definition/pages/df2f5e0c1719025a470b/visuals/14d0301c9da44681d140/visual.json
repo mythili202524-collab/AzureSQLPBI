@@ -143,6 +143,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "BoxOfficeDollars",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
